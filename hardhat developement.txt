@@ -1,0 +1,42 @@
+
+
+2) Write a Smart Contract and demonstrate the steps
+involved in the process of compilation using Hardhat
+Development Environment.
+ans=
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract MyToken {
+    string public name = "My Token";
+    string public symbol = "MTK";
+    uint256 public totalSupply;
+
+    mapping(address => uint256) public balanceOf;
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    constructor(uint256 initialSupply) {
+        totalSupply = initialSupply;
+        balanceOf[msg.sender] = initialSupply;
+    }
+
+    function transfer(address to, uint256 value) public returns (bool) {
+        require(balanceOf[msg.sender] >= value, "Insufficient balance");
+        balanceOf[msg.sender] -= value;
+        balanceOf[to] += value;
+        emit Transfer(msg.sender, to, value);
+        return true;
+    }
+}
+
+steps=
+1)install hardhat
+npm install -g hardhat
+2)creat new hardhat project
+npx hardhat init
+3)write smart contract
+4)compile smart contract
+npx hardhat compile
+5)verify compilation

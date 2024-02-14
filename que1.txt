@@ -1,0 +1,13 @@
+1) Mention the differences between Hardhat and Truffle.
+ans=
+difference
+hardhat=
+1)faster migration process
+2)less gas fee during migration
+3)debugging is easy
+
+truffle=
+1)poor migration process
+2)more gas fee during migration
+3)not good as compaired to hardhat
+------------------------------------------------------------------------
